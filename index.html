@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Flashcards</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
+		<script src="scripts/scripts.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="header">
+			<h1 id="title">Flashcards</h1>
+			<image onclick="loadCards()" id="loadCardsButton" src="images/load.png"></image>
+			<image onclick="share()" id="shareButton" src="images/share.png"></image>
+			<image onclick="restart()" id="restartButton" src="images/restart.png"></image>
+		</div>
+		<div id="container">
+			<div id="content">
+				<image id="saveButton" onclick="toggleSaved()" src="images/save.png"/>
+				<div id="cardContentContainer">
+					<div id="card" onclick="flip()">
+						<p id="term">No cards loaded.</p>
+						<p id="definition">Load a Gist url containing a tab-delimited plaintext file. <a onclick="alert('Go to gist.github.com and paste in text where term and definition are separated by a tab, and cards are separated by a newline. Paste that URL in the prompt. For example: \n\nTerm 1\tDefinition 1\nTerm 2\tDefinition 2\nTerm 3\tDefinition 3\n\nFor example: https://gist.github.com/jwhamilton99/634dbcfa596591c8614ab0d05d7a43d0')" href="javascript:void(0)">(What's that?)</a></p>
+					</div>
+				</div>
+				<div id="allCardsContainer">
+					<div id="allCardsView">
+					</div>
+				</div>
+				<div id="controls">
+					<button onclick="advance()" id="advanceButton">Start</button>
+					<button onclick="loadCards()" id="secondaryLoadButton">Load</button>
+				</div>
+			</div>
+			<div id="footer">
+				<div id="cardControls">
+					<image onclick="prev()" id="previousButton" src="images/previous.png"></image>
+					<p id="current">--</p>
+					<div id="progressContainer">
+						<div id="progressBar">
+						</div>
+					</div>
+					<p id="count">--</p>
+					<image onclick="next()" id="nextButton" src="images/next.png"></image>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

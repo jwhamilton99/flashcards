@@ -1,0 +1,269 @@
+body {
+	background-color:#1a1a1a;
+	color:#e6e6e6;
+	font-family: Arial, helvetica, sans-serif;
+	margin:0;
+	display:flex;
+	flex-direction:column;
+	text-align:center;
+	align-items:center;
+}
+
+#header {
+	width:100%;
+	background-color:#e6e6e6;
+	color:#1a1a1a;
+	flex-grow:0;
+	display:flex;
+	justify-content:center;
+	text-align:left;
+	align-items:center;
+	height:50px;
+}
+
+#container {
+	width:100%;
+	margin-top:0px;
+	margin-bottom:0px;
+	flex-grow:1;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	max-width:800;
+	font-size:4vh;
+	height:calc(100vh - 50px);
+}
+
+#content {
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	flex-grow:1;
+	max-height:500px;
+	
+	background-color:#e6e6e6;
+	color:#1a1a1a;
+	border-radius:25px;
+	border:10px solid #1a1a1a;
+	width:100%;
+	/* border:none; */
+	transition: all .1s ease-in-out;
+}
+
+#footer {
+	flex-grow:0;
+	width:100%;
+	height:50px;
+	margin-top:10px;
+	display:none;
+}
+
+#loadCardsButton {
+	flex-grow:0;
+}
+
+#title {
+	flex-grow:1;
+	margin-left:10px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+#term {
+	font-weight:bold;
+	transition: all .1s ease-in-out;
+}
+
+#definition {
+	transition: all .1s ease-in-out;
+}
+
+#restartButton {
+	flex-grow:0;	
+}
+
+#loadCardsButton, #restartButton, #shareButton {
+	margin:5px;
+	width:40px;
+	height:40px;
+	cursor:pointer;
+}
+
+#card {
+	margin:10px;
+}
+
+#advanceButton {
+	display: none;
+	margin:10px;
+}
+
+#cardControls {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:100%;
+}
+
+#saveButton {
+	width:50px;
+	height:50px;
+	left:10;
+	top:10;
+	z-index:10;
+	position:absolute;
+	cursor:pointer;
+	display:none;
+}
+
+#fullScreenButton {
+	width:50px;
+	height:50px;
+	left:10;
+	top:10;
+	z-index:10;
+	position:absolute;
+}
+
+#allCardsContainer {
+	display: none;
+	flex-grow:1;
+	width:100%;
+	height:1vw;
+}
+
+#allCardsView {
+	background-color:#1a1a1a;
+	/* border-radius:35px; */
+	display:flex;
+	overflow:auto;
+	width:calc(100% - 20px);
+	margin-left:10px;
+	height:100%;
+	flex-direction:row;
+	flex-wrap:wrap;
+	align-content:flex-start;
+	box-sizing:border-box;
+	border:5px solid #1a1a1a;
+}
+
+#advanceButton, #secondaryLoadButton {
+	background-color:#1a1a1a;
+	padding:10px;
+	color:#e6e6e6;
+	border:3px solid #1a1a1a;
+	border-radius:10px;
+	font-size:25px;
+	cursor:pointer;
+}
+
+#cardContentContainer {
+	transition: all .1s ease-in-out;
+	position:relative;
+}
+
+#advanceButton:hover, #secondaryLoadButton:hover {
+	background-color:#e6e6e6;
+	color:#1a1a1a;
+	border:3px solid #1a1a1a;
+}
+
+.previewCardContainer {
+	width:50%;
+	box-sizing:border-box;
+}
+
+.previewCard {
+	background-color:#e6e6e6;
+	border-radius:25px;
+	margin:10px;
+	padding:10px 15px;
+	word-break:break-all;
+	text-align:left;
+}
+
+.previewTerm {
+	margin-bottom:-10px;
+}
+
+a {
+	color:#1a1a1a;
+	font-weight:bold;
+}
+
+#progressContainer {
+	flex-grow:1;
+	margin-left:5px;
+	margin-right:5px;
+	text-align:left;
+}
+
+#previousButton, #nextButton {
+	width:50px;
+	height:50px;
+	cursor:pointer;
+}
+
+#progressBar {
+	background-color:#e6e6e6;
+	height:20px;
+	border-radius:10px;
+	width:0%;
+	min-width:20px;
+}
+
+#current, #count {
+	margin-left:10px;
+	margin-right:10px;
+	font-size:20px;
+}
+
+@media screen and (orientation: portrait) {
+	#content {
+		max-height:none;
+		border:10px solid #1a1a1a;
+		box-sizing:border-box;
+	}
+	#container {
+		max-width:none;
+		/* margin:10px; */
+		font-size:5vh;
+		max-height:calc(100vh - 6vh);
+	}
+	
+	#header, #footer {
+		height:6vh;
+		/*padding-top:1%;
+		padding-bottom:1%; */
+		box-sizing:border-box;
+		font-size:2vh;
+	}
+	
+	#advanceButton {
+		font-size:5vh;
+		margin:1vh;
+		border-radius:25px;
+	}
+	
+	#loadCardsButton, #restartButton, #previousButton, #nextButton, #shareButton {
+		height:6vh;
+		width:6vh;
+	}
+	
+	#saveButton {
+		height:6vh;
+		width:6vh;
+	}
+	
+	.previewCardContainer {
+		width:100%;
+	}
+	
+	#current, #count {
+		font-size:3vh;
+	}
+}
